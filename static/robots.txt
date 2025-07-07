@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://designdigitaldev.org/sitemap.xml

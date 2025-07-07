@@ -1,0 +1,22 @@
+{
+  "title": {
+    "message": "DESIGN DIGITAL DEV",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "DESIGN DIGITAL DEV Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Documentație": {
+    "message": "Documentație",
+    "description": "Navbar item with label Documentație"
+  },
+  "item.label.Articole": {
+    "message": "Articole",
+    "description": "Navbar item with label Articole"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}
