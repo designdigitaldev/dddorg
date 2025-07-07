@@ -13,9 +13,6 @@ const config = {
   projectName: 'dddorg',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  plugins: [
-    '@docusaurus/plugin-sitemap',
-  ],
   i18n: {
     defaultLocale: 'ro',
     locales: ['ro', 'en'],
@@ -35,6 +32,7 @@ const config = {
   presets: [
     [
       'classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
           sidebarPath: './sidebars.js',
@@ -45,11 +43,17 @@ const config = {
           feedOptions: { type: ['rss', 'atom'], xslt: true },
           editUrl: 'https://github.com/designdigitaldev/dddorg/tree/main/',
         },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          filename: 'sitemap.xml',
+        },
         theme: { customCss: './src/css/custom.css' },
       }),
     ],
   ],
   themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image: 'img/logo.png',
       navbar: {
@@ -65,13 +69,32 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          { title: 'Resurse', items: [{ label: 'Documentație', to: '/docs/intro' }, { label: 'Articole', to: '/blog' }] },
-          { title: 'Companie', items: [{ label: 'Site Prezentare', href: 'https://designdigital.ro' }, { label: 'Contactează-ne', href: 'mailto:office@designdigital.ro' }] },
-          { title: 'Comunitate', items: [{ label: 'GitHub', href: 'https://github.com/designdigitaldev' }] },
+          {
+            title: 'Resurse',
+            items: [
+              { label: 'Documentație', to: '/docs/intro' },
+              { label: 'Articole', to: '/blog' },
+            ],
+          },
+          {
+            title: 'Companie',
+            items: [
+              { label: 'Site Prezentare', href: 'https://designdigital.ro' },
+              { label: 'Contactează-ne', href: 'mailto:office@designdigital.ro' },
+            ],
+          },
+          {
+            title: 'Comunitate',
+            items: [{ label: 'GitHub', href: 'https://github.com/designdigitaldev' }],
+          },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} DESIGN DIGITAL DEV S.R.L. Construit cu Docusaurus.`,
       },
-      prism: { theme: prismThemes.github, darkTheme: prismThemes.dracula },
+      prism: {
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
+      },
     }),
 };
+
 export default config;
